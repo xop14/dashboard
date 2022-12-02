@@ -1,0 +1,87 @@
+/* css reset */
+
+:root {
+    color-scheme: light dark;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+
+body {
+    height: 100vh;
+}
+
+
+/* main code */
+
+* {
+    border: 1px solid red;
+}
+
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(2, min-content) repeat(2, 1fr) 50px;
+    grid-template-columns: minmax(min-content, 1fr) 3fr 1fr;
+    grid-template-areas: 
+        "na ht ht"
+        "na hb hb"
+        "na pr an"
+        "na pr tr"
+        "na ft ft"
+        ;
+    height: 100%;
+}
+
+/* NAVBAR SECTION */
+.navbar {
+    grid-area: na;
+    background-color: darkcyan;
+    color: white;
+    padding: 15px
+}
+
+.header-top {
+    grid-area: ht;
+}
+
+.header-bottom {
+    grid-area: hb;
+}
+
+.projects{
+    grid-area: pr;
+    padding: 15px;
+}
+
+.announcements {
+    grid-area: an;
+    padding: 15px 20px 15px 0px;
+}
+
+.trending {
+    grid-area: tr;
+    padding: 15px 20px 15px 0px;
+}
+
+.footer {
+    grid-area: ft;
+}
+
+

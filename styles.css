@@ -350,13 +350,9 @@ path {
     cursor: pointer;
     transition: 0.1s;
 }
-.project-btns > svg:hover {
+.project-btns svg:hover {
     transform: scale(1.1);
     color: var(--svg-color-hover);
-}
-
-.heart-icon svg:hover {
-    color: var(--heart-icon-color-hover) !important;
 }
 
 .heart-icon-selected {
@@ -435,7 +431,7 @@ path {
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .container {
         display: grid;
         grid-template-rows: repeat(2, min-content) repeat(2, min(1fr, min-content)) 50px;

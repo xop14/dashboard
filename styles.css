@@ -36,12 +36,13 @@ body {
     --main-bg-color: #e1e8ef;
     --main-font-color: #636572;
     --main-heading-color: #252736;
+    --main-heading-color-hover: #1185d8;
     --navbar-bg-color: #084292;
     --navbar-font-color: #eef0ff;
     --navbar-font-color-hover: #96b5e8;
     --placeholder-font-color: #25273655;
     --btn-color: #1185d8;
-    --btn-color-hover: #0e619c;
+    --btn-color-hover: #1669a5;
     --btn-font-color: #fff;
     --card-bg-color: #fff;
     --header-section-bg-color: #fff;
@@ -55,17 +56,18 @@ body {
     --main-bg-color: #41445c;
     --main-font-color: #eff0fb;
     --main-heading-color: #c5caf0;
+    --main-heading-color-hover: #cd87d6;
     --navbar-bg-color: #252736;
     --navbar-font-color: #dce0f7;
-    --navbar-font-color-hover: #b8c0ed;
+    --navbar-font-color-hover: #cd87d6;
     --placeholder-font-color: #bfc5f055;
     --btn-color: #464ea1;
-    --btn-color-hover: #5161b9;
+    --btn-color-hover: #3b408b;
     --btn-font-color: #eee2fb;
     --card-bg-color: #323448;
     --header-section-bg-color: #323448;
     --highlight-color: #464ea1;
-    --svg-color-hover: #788ecf;
+    --svg-color-hover: #cd87d6;
     --box-shadow-color: #2e30404b;
     --heart-icon-color-hover: #da8499;
 }
@@ -242,6 +244,14 @@ path {
     border-radius: 50%;
 }
 
+.header-top a {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+.header-top a:hover {
+    color: var(--main-heading-color-hover)
+
+}
 
 
 /* HEADER BOTTOM */
@@ -330,7 +340,7 @@ path {
 }
 
 .project-content a h4:hover {
-    color: var(--main-font-color)
+    color: var(--main-heading-color-hover)
 }
 
 .project-card p {

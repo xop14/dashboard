@@ -53,42 +53,22 @@ body {
 
 [data-theme="dark"] {
     --main-bg-color: #41445c;
-    --main-font-color: #ced0e0;
-    --main-heading-color: #aeb4db;
+    --main-font-color: #eff0fb;
+    --main-heading-color: #c5caf0;
     --navbar-bg-color: #252736;
-    --navbar-font-color: #cbcfec;
-    --navbar-font-color-hover: #e4e7f7;
+    --navbar-font-color: #dce0f7;
+    --navbar-font-color-hover: #b8c0ed;
     --placeholder-font-color: #bfc5f055;
-    --btn-color: #7246a1;
-    --btn-color-hover: #8351b9;
+    --btn-color: #464ea1;
+    --btn-color-hover: #5161b9;
     --btn-font-color: #eee2fb;
     --card-bg-color: #323448;
     --header-section-bg-color: #323448;
-    --highlight-color: #7246a1;
-    --svg-color-hover: #7246a1;
+    --highlight-color: #464ea1;
+    --svg-color-hover: #788ecf;
     --box-shadow-color: #2e30404b;
     --heart-icon-color-hover: #da8499;
 }
-
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --main-bg-color: #41445c;
-        --main-font-color: #ced0e0;
-        --main-heading-color: #aeb4db;
-        --navbar-bg-color: #252736;
-        --navbar-font-color: #cbcfec;
-        --navbar-font-color-hover: #e4e7f7;
-        --placeholder-font-color: #bfc5f055;
-        --btn-color: #7246a1;
-        --btn-color-hover: #8351b9;
-        --btn-font-color: #eee2fb;
-        --card-bg-color: #323448;
-        --header-section-bg-color: #323448;
-        --highlight-color: #7246a1;
-        --svg-color-hover: #7246a1;
-        --box-shadow-color: #2e30404b;
-    }
-} */
 
 .container {
     display: grid;
@@ -123,10 +103,15 @@ h5 {
     color: var(--main-heading-color);
     font-size: 0.9rem;
     font-weight: bold;
+    margin-bottom: 4px;
 }
 
 p {
     color: var(--main-font-color);
+}
+
+path {
+    pointer-events: none;
 }
 
 /* NAVBAR SECTION */
@@ -134,7 +119,7 @@ p {
     grid-area: na;
     background-color: var(--navbar-bg-color);
     color: var(--navbar-font-color);
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -157,11 +142,15 @@ p {
     font-weight: bold;
 }
 
+.hamburger {
+    display: none;
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     justify-content: center;
 }
 
@@ -176,7 +165,7 @@ p {
 .navbar a {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 20px;
     text-decoration: none;
     color: var(--navbar-font-color);
 }
@@ -309,14 +298,6 @@ p {
     transition: 0s;
 }
 
-.heart-icon:hover {
-    color: var(--heart-icon-color-hover) !important;
-}
-.heart-icon-selected {
-    color: var(--heart-icon-color-hover) !important;
-}
-
-
 /* PROJECTS SECTION */
 
 .projects{
@@ -344,6 +325,14 @@ p {
     transform: scale(1.02);
 }
 
+.project-content a {
+    text-decoration: none;
+}
+
+.project-content a h4:hover {
+    color: var(--main-font-color)
+}
+
 .project-card p {
     padding-top: 10px;
     color: var(--main-font-color);
@@ -361,10 +350,20 @@ p {
     cursor: pointer;
     transition: 0.1s;
 }
-.project-btns svg:hover {
+.project-btns > svg:hover {
     transform: scale(1.1);
     color: var(--svg-color-hover);
 }
+
+.heart-icon svg:hover {
+    color: var(--heart-icon-color-hover) !important;
+}
+
+.heart-icon-selected {
+    color: var(--heart-icon-color-hover) !important;
+}
+
+
 
 /* SIDEBAR RIGHT */
 .sidebar-right {
@@ -432,4 +431,69 @@ p {
     grid-area: ft;
     background-color: var(--main-bg-color);
     padding-top: 50px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-rows: repeat(2, min-content) repeat(2, min(1fr, min-content)) 50px;
+        grid-template-columns: min-content 6fr minmax(min-content, 2fr);
+        grid-template-areas: 
+            "na ht ht"
+            "na hb hb"
+            "na pr pr"
+            "na sb sb"
+            "na ft ft"
+            ;
+        height: 100%;
+    }
+
+    /* .navbar {
+        padding: 15px 20px;
+        width: 64px;
+    } */
+
+    .navbar-closed {
+        padding: 15px 20px;
+        width: 64px;
+    }
+
+    .navbar-open {
+        padding: 15px 20px;
+        width: min-content;
+    }
+
+    .logo {
+        display: none;
+    }
+    .hamburger {
+        display: inline;
+        cursor: pointer;
+        height: 40px;
+    }
+
+    .avatar-sm, .username-sm {
+        display: none;
+    }
+    .buttons {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .buttons button {
+        max-width: 27%;
+        padding: 10px 10px !important;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .announcements {
+        padding-left: 20px;
+    }
+    .trending {
+        padding-left: 20px;
+        padding-top: 20px;
+    }
 }
